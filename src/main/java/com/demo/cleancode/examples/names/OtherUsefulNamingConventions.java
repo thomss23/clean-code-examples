@@ -15,7 +15,6 @@ public class OtherUsefulNamingConventions {
     }
 
     //versus too much context
-
     static class PageReloaderForPagesDisplayingVectorGraphicsThatAreUsedInTheEditorDescriptions {
 
     }
