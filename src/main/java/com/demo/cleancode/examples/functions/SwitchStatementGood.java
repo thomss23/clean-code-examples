@@ -1,11 +1,8 @@
 package com.demo.cleancode.examples.functions;
 
-import com.demo.cleancode.examples.exception.InvalidEmployeeTypeException;
-import com.demo.cleancode.examples.util.model.Employee;
+import com.demo.cleancode.examples.util.exception.InvalidEmployeeTypeException;
 import com.demo.cleancode.examples.util.model.EmployeeType;
 import com.demo.cleancode.examples.util.model.Money;
-
-import static com.demo.cleancode.examples.util.model.EmployeeType.*;
 
 /**
  * It’s hard to make a small switch statement. Even a switch statement with only two cases is

@@ -1,7 +1,7 @@
 package com.demo.cleancode.examples.functions;
 
 
-import com.demo.cleancode.examples.exception.InvalidEmployeeTypeException;
+import com.demo.cleancode.examples.util.exception.InvalidEmployeeTypeException;
 import com.demo.cleancode.examples.util.model.Employee;
 import com.demo.cleancode.examples.util.model.Money;
 

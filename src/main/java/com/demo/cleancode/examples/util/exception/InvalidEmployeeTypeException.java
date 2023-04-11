@@ -1,4 +1,4 @@
-package com.demo.cleancode.examples.exception;
+package com.demo.cleancode.examples.util.exception;
 
 import com.demo.cleancode.examples.util.model.EmployeeType;
 
