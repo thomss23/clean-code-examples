@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class Employee {
 
     private int id;
+    private String email;
     private int ageSeniority;
     private int seniorityLevel;
     private String name;
@@ -21,5 +22,9 @@ public class Employee {
 
     public Employee(int id) {
         this.id = id;
+    }
+
+    public Employee(String email) {
+        this.email = email;
     }
 }

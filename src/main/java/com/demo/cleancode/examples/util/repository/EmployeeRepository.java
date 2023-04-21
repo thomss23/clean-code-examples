@@ -7,4 +7,8 @@ public class EmployeeRepository {
     public Employee findEmployeeById(int id) {
         return new Employee(id);
     }
+
+    public Employee findEmployeeByEmail(String email) {
+        return new Employee(email);
+    }
 }
