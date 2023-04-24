@@ -1,23 +1,31 @@
 package com.demo.cleancode.examples.functions;
 
+import com.demo.cleancode.examples.util.service.FryingPanService;
+import lombok.RequiredArgsConstructor;
+
+
+@RequiredArgsConstructor
 public class TopDownNarrativeBad {
 
-    //The StepDown rule
+    private final FryingPanService fryingPanService;
 
-
-    //TODO add some relevat sout() that will make it more readable or method names
-    void method4() {
-
-    }
-    void method3() {
-        method4();
-    }
-    void method2() {
-        method3();
+    private void serve() {
+        System.out.println("Serve breakfast");
     }
 
-    void method1() {
-        method2();
-        method4();
+    private void addEggs() {
+        System.out.println("Add eggs from the fridge");
+    }
+
+    private void cook() {
+        fryingPanService.mixContents();
+        fryingPanService.addCondiments();
+        fryingPanService.mixContents();
+    }
+
+    public void makeBreakfast() {
+        addEggs();
+        cook();
+        serve();
     }
 }
