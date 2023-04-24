@@ -3,7 +3,6 @@ package com.demo.cleancode.examples.util.service;
 import com.demo.cleancode.examples.util.model.Employee;
 import com.demo.cleancode.examples.util.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.web.servlet.server.Session;
 
 @RequiredArgsConstructor
 public class EmployeeService {
