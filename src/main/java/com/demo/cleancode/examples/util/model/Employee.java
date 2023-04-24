@@ -19,6 +19,7 @@ public class Employee {
     private boolean isWorkingFullTime;
     private boolean isInFinanceDepartment;
     private EmployeeType type;
+    private CompanyRole role;
 
     public Employee(int id) {
         this.id = id;
