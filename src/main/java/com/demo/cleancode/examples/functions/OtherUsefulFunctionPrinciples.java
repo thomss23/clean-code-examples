@@ -83,17 +83,6 @@ public class OtherUsefulFunctionPrinciples {
         // handle delete department error
     }
 
-    /**
-     * Refactor a large loop by splitting it.
-     * <br>
-     * <br>
-     * It won't affect performance nowadays, but depends, of course, of the logic inside the for loop (like doing some very expensive operation of calling the database or a million of iterations.
-     * Also, consider the memory size, if you could keep all the items in memory.
-     */
-    public void processWorkItem(List<WorkItem> workItems) {
-        //TODO implement example
-    }
-
 
 //TODO remaining to be covered
     //no null parameters
