@@ -25,7 +25,7 @@ public class LoopsBad {
             }
 
             if (isMyCustomConditionFulfilled(workItem)) {
-                System.out.println("My custom logic that I need to add for a corner case bug fix unrelated with the other 1-5 conditions");
+                System.out.println("My custom logic in depth embedded that I need to add for a corner case bug fix unrelated with the other 1-5 conditions");
             }
 
 

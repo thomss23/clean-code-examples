@@ -1,11 +1,9 @@
 package com.demo.cleancode.examples.functions;
 
 import com.demo.cleancode.examples.util.model.Employee;
-import com.demo.cleancode.examples.util.model.WorkItem;
+import com.demo.cleancode.examples.util.model.EmployeeInfo;
 import com.demo.cleancode.examples.util.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
-
-import java.util.List;
 
 
 @RequiredArgsConstructor
@@ -83,8 +81,90 @@ public class OtherUsefulFunctionPrinciples {
         // handle delete department error
     }
 
+    /**
+     * Don't Pass Null arguments to a method. This is a design mistake
+     * <br>
+     * <br>
+     * Returning null from methods is bad, but passing null into methods is even worse. Unless you
+     * are working with an API which expects you to pass null for an optional field, you should avoid passing null in
+     * your code whenever possible.
+     * <br>
+     * <br>
+     * A classic frequently encountered example is when you have a method with many arguments and you need to add another argument that will be used only for a specific case.
+     * In all other cases, the method is called with null. You add a nullable param in order to reuse the same method.
+     */
+    public void processEmployeeInfo() {
+        //data to process is read from some table or file
+        methodWithNonNullableArguments("Mary", "Manager", 25, "Red");
+        methodWithNonNullableArguments("John", "Hr", 27, "Yellow");
+        methodWithNonNullableArguments("Tom", "Manager", 29, "Green");
 
-//TODO remaining to be covered
-    //no null parameters
-    //command query separation
+    }
+
+    private void methodWithNonNullableArguments(String name, String type, int age, String color) {
+        //implement logic for name, type, age, color
+    }
+
+    //at some point in the future you need to add an extra logic for an employee's address, which is not always present.
+    // This is when you decide to reuse the same method and add a nullable argument to it, address
+
+    public void processEmployeeInfoWithAddress() {
+        //data to process is read from some table or file
+        methodWithOneNullableArguments("Mary", "Manager", 25, "Red", null);
+        methodWithOneNullableArguments("John", "Hr", 27, "Yellow", "Bucharest,Dacia One street");
+        methodWithOneNullableArguments("Tom", "Manager", 29, "Green", null);
+    }
+
+    private void methodWithOneNullableArguments(String name, String type, int age, String color, String address) {
+        //implement logic for name, type, age, color
+        if (address != null) {
+            System.out.println("Do something with address also, like send a postal card");
+        }
+    }
+
+    //One possible refactoring solutions:
+
+    public void processEmployeeInfoWithAddressRefactored() {
+        //data to process is read from some table or file
+        methodWithArgumentObject(new EmployeeInfo("Mary", "Manager", 25, "Red", null));
+        methodWithArgumentObject(new EmployeeInfo("John", "Hr", 27, "Yellow", "Bucharest,Dacia One street"));
+        methodWithArgumentObject(new EmployeeInfo("Tom", "Manager", 29, "Green", null));
+    }
+
+    private void methodWithArgumentObject(EmployeeInfo employeeInfo) {
+        //implement logic for name, type, age, color
+        if (employeeInfo.getAddress() != null) {
+            System.out.println("Do something with address also, like send a postal card");
+        }
+    }
+
+    /**
+     * Now imagine if you would have more than 1 argument nullable. This would make the code even harder to read, as you have to count and look at the definition of the method to understand
+     * what's going on. Furthermore, you have a function with  many parameters that takes multiple distinct parameters of the same time, which is more difficult to mentally parse
+     */
+    public void processEmployeeInfoWithMultipleNullableFields() {
+        //data to process is read from some table or file
+        methodWithMultipleNullableArguments("Mary", null, 25, null, null);
+        methodWithMultipleNullableArguments("John", "Hr", 27, "Yellow", "Bucharest,Dacia One street");
+        methodWithMultipleNullableArguments("Tom", null, 29, "Green", null);
+    }
+
+    private void methodWithMultipleNullableArguments(String name, String type, int age, String color, String address) {
+        if (type != null) {
+            System.out.println("Do something with type");
+        }
+        if (color != null) {
+            System.out.println("Do something with color");
+        }
+        if (address != null) {
+            System.out.println("Do something with address also, like send a postal card");
+        }
+    }
+
+    // Other possible refactoring solutions:
+    //- exception/error handling when address is null
+    //- set default values in EmployeeInfo  for null arguments
+    //- use the Builder pattern for EmployeeInfo
+    //- use Optional for the nullable method arguments, but this makes the code harder to read most of the times
+    //- handle null parameters logic in different method logic
 }
