@@ -1,9 +1,9 @@
 package com.demo.cleancode.examples.comments.goodcomments;
 
-/*
+/**
 the initializeDatabase method drops all tables in the database and recreates them, effectively wiping out all existing data.
 To warn other developers of this consequence, a comment has been added to the code
- */
+ **/
 
 public class WarningOfConsequences {
     private Database database;

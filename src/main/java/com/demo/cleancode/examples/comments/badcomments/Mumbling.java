@@ -3,7 +3,7 @@ package com.demo.cleancode.examples.comments.badcomments;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-/*
+/**
 
 What does that comment in the catch block mean? Clearly it meant something to the
 author, but the meaning does not come through all that well. Apparently, if we get an
@@ -19,7 +19,7 @@ load the defaults?
 Our only recourse is to examine the code in other parts of the system to find out what’s
 going on. Any comment that forces you to look in another module for the meaning of that
 comment has failed to communicate to you and is not worth the bits it consumes.
- */
+ **/
 public class Mumbling {
     private LoadedProperties loadedProperties;
 

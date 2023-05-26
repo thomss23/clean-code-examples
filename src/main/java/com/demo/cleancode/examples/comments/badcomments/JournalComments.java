@@ -1,5 +1,11 @@
 package com.demo.cleancode.examples.comments.badcomments;
 
+/** Long ago there was a good reason to create and maintain these log entries at the start
+ of every module. We didn’t have source code control systems that did it for us. Nowadays,
+ however, these long journals are just more clutter to obfuscate the module. They should be
+ completely removed.
+ **/
+
 /*
  * Changes (from 11-Oct-2001)
  * --------------------------
@@ -20,11 +26,6 @@ package com.demo.cleancode.examples.comments.badcomments;
  * 29-May-2003 : Fixed bug in addMonths method (DG);
  * 04-Sep-2003 : Implemented Comparable. Updated the isInRange javadocs (DG);
  * 05-Jan-2005 : Fixed bug in addYears() method (1096282) (DG);
-
- Long ago there was a good reason to create and maintain these log entries at the start
-of every module. We didn’t have source code control systems that did it for us. Nowadays,
-however, these long journals are just more clutter to obfuscate the module. They should be
-completely removed.
  */
 public class JournalComments {
 }
