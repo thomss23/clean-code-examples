@@ -4,12 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/*
+/**
 Sometimes programmers will put special comments on closing braces, as in Listing 4-6.
 Although this might make sense for long functions with deeply nested structures, it serves
 only to clutter the kind of small and encapsulated functions that we prefer. So if you find
 yourself wanting to mark your closing braces, try to shorten your functions instead.
- */
+ **/
 
 public class ClosingBraceComments {
 

@@ -4,13 +4,13 @@ import com.demo.cleancode.examples.util.model.CD;
 
 import java.util.List;
 
-/*
+/**
 It is just plain silly to have a rule that says that every function must have a javadoc, or
 every variable must have a comment.
 
 This clutter adds nothing and serves only to obfuscate the code and create the
 potential for lies and misdirection.
- */
+ **/
 public class MandatedComments {
     private List<CD> cdList;
     /**
