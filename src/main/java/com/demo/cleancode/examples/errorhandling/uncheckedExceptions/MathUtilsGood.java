@@ -2,31 +2,28 @@ package com.demo.cleancode.examples.errorhandling.uncheckedExceptions;
 
 /**
 
- For years Java programmers have debated over the benefits and liabilities of checked exceptions.
- When checked exceptions were introduced in the first versionof Java, they seemed like a great idea.
- The signature of every method would list all of theexceptions that it could pass to its caller.
- Moreover, these exceptions were part of the typeof the method.
- Your code literally wouldn’t compile if the signature didn’t match what yourcode could do.
-
- The price of checked exceptions is an Open/Closed Principle1 violation.
- If you throw a checked exception from a method in your code and the catch is three levels
- above, you must declare that exception in the signature of each method between you and
- the catch. This means that a change at a low level of the software can force signature
- changes on many higher levels. The changed modules must be rebuilt and redeployed,
- even though nothing they care about changed.
-
- Consider the calling hierarchy of a large system. Functions at the top call functions
- below them, which call more functions below them, ad infinitum. Now let’s say one of the
- lowest level functions is modified in such a way that it must throw an exception. If that
- exception is checked, then the function signature must add a throws clause. But this
- means that every function that calls our modified function must also be modified either to
- catch the new exception or to append the appropriate throws clause to its signature. Ad
- infinitum. The net result is a cascade of changes that work their way from the lowest levels
- of the software to the highest! Encapsulation is broken because all functions in the path
- of a throw must know about details of that low-level exception. Given that the purpose of
- exceptions is to allow you to handle errors at a distance, it is a shame that checked
- exceptions break encapsulation in this way.
-
+ Java programmers have long debated the pros and cons of checked exceptions.
+ Initially, checked exceptions seemed like a great idea.
+ They required every method to declare the exceptions it could throw, making the code more explicit.
+ However, <strong>the use of checked exceptions comes with a price.</strong>
+ <br>
+ <br>
+ <strong>One major drawback is that checked exceptions violate the Open/Closed Principle.</strong>
+ If a method throws a checked exception that needs to be caught three levels above, <strong>all the methods in between must declare and handle the exception in their signatures.</strong>
+ This means that a change in a low-level module can force signature changes on many higher-level modules, requiring them to be rebuilt and redeployed unnecessarily.
+ <br>
+ <br>
+ Consider a large system with a hierarchical calling structure. If a lower-level function is modified to throw a checked exception,
+ <strong>every function that calls it must also be modified to handle or propagate the exception.</strong>
+ This leads to a cascade of changes from the lowest to the highest levels of the software.
+ <br>
+ <br>
+ Furthermore, <strong>checked exceptions break encapsulation since all functions in the exception's path must be aware of the specific details of the low-level exception.</strong>
+ This goes against the purpose of exceptions, which is to allow handling errors at a distance.
+ <br>
+ <br>
+ In summary, while checked exceptions have their advantages, the drawbacks include violating the Open/Closed Principle, creating cascading changes, and breaking encapsulation.
+ These factors have fueled ongoing discussions among Java programmers.
  **/
 public  class MathUtilsGood {
     public static double divide(double dividend, double divisor) {

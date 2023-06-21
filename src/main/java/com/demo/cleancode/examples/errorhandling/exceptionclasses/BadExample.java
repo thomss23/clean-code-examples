@@ -7,9 +7,12 @@ import com.demo.cleancode.examples.util.model.ACMEPort;
 
 
 /**
- That statement contains a lot of duplication, and we shouldn’t be surprised. In most
- exception handling situations, the work that we do is relatively standard regardless of the
+ <strong>That statement contains a lot of duplication, and we shouldn’t be surprised.</strong>
+ <br>
+ In most exception handling situations, the work that we do is relatively standard regardless of the
  actual cause. We have to record an error and make sure that we can proceed.
+ <br>
+ <br>
  In this case, because we know that the work that we are doing is roughly the same
  regardless of the exception, we can simplify our code considerably by wrapping the API
  that we are calling and making sure that it returns a common exception type:

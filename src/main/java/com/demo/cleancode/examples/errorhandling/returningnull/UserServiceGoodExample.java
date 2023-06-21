@@ -4,8 +4,10 @@ import com.demo.cleancode.examples.util.exception.UserNotFoundException;
 import org.apache.catalina.User;
 
 /**
- When we return null, we are essentially creating work for ourselves and foisting
- problems upon our callers. All it takes is one missing null check to send an application
+ <strong>When we return null, we are essentially creating work for ourselves and foisting
+ problems upon our callers.</strong>
+ <br>
+ All it takes is one missing null check to send an application
  spinning out of control.
  **/
 public class UserServiceGoodExample {

@@ -3,13 +3,11 @@ package com.demo.cleancode.examples.util.model;
 import com.demo.cleancode.examples.util.exception.ATM1212UnlockedException;
 import com.demo.cleancode.examples.util.exception.DeviceResponseException;
 import com.demo.cleancode.examples.util.exception.GMXError;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class ACMEPort {
     private int portNumber;
-
-    public ACMEPort(int portNumber) {
-        this.portNumber = portNumber;
-    }
 
     public void open() {
         // Open the ACMEPort

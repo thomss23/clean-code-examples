@@ -4,12 +4,11 @@ import com.demo.cleancode.examples.util.exception.ATM1212UnlockedException;
 import com.demo.cleancode.examples.util.exception.DeviceResponseException;
 import com.demo.cleancode.examples.util.exception.GMXError;
 import com.demo.cleancode.examples.util.exception.PortDeviceFailure;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class LocalPort {
     private ACMEPort innerPort;
-    public LocalPort(int portNumber) {
-        innerPort = new ACMEPort(portNumber);
-    }
     public void open() {
         try {
             innerPort.open();
