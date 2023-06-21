@@ -2,6 +2,8 @@ package com.demo.cleancode.examples.errorhandling;
 
 import com.demo.cleancode.examples.util.exception.InsufficientFundsException;
 import com.demo.cleancode.examples.util.exception.WithdrawalException;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  Back in the distant past there were many languages that didn’t have exceptions. In those
@@ -16,16 +18,10 @@ import com.demo.cleancode.examples.util.exception.WithdrawalException;
  **/
 public class ExceptionsRatherThanReturnCodes {
 
+    @AllArgsConstructor
+    @Getter
     public class AccountBadExample {
         private double balance;
-
-        public AccountBadExample(double balance) {
-            this.balance = balance;
-        }
-
-        public double getBalance() {
-            return balance;
-        }
 
         public int withdraw(double amount) {
             if (amount > balance) {
@@ -36,16 +32,10 @@ public class ExceptionsRatherThanReturnCodes {
         }
     }
 
+    @AllArgsConstructor
+    @Getter
     public class AccountGoodExample {
         private double balance;
-
-        public AccountGoodExample(double balance) {
-            this.balance = balance;
-        }
-
-        public double getBalance() {
-            return balance;
-        }
 
         public void withdraw(double amount) throws WithdrawalException {
             if (amount > balance) {
