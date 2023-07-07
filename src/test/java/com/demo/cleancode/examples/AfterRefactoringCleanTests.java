@@ -35,5 +35,4 @@ public class AfterRefactoringCleanTests {
         double delta = 0.01;
         assertEquals(expectedCost, actualCost, delta);
     }
-
 }

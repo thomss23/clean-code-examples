@@ -7,6 +7,7 @@ import com.demo.cleancode.examples.util.model.ShoppingCart;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BeforeRefactoringCleanTests {
+
     public void testCalculateShippingCost() {
         ShoppingCart cart = new ShoppingCart();
         Item item1 = new Item("123", "Product A", 10.99);
@@ -22,5 +23,4 @@ public class BeforeRefactoringCleanTests {
 
         assertEquals(5.0, shippingCost, 0.01);
     }
-
 }
