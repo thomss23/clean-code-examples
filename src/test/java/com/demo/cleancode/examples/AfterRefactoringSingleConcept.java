@@ -30,5 +30,4 @@ public class AfterRefactoringSingleConcept {
         cart.addItem(new Item("456", "Product B", 24.99));
         return cart;
     }
-
 }
