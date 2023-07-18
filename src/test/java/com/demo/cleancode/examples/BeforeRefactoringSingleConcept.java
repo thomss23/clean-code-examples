@@ -11,11 +11,11 @@ public class BeforeRefactoringSingleConcept {
     @Test
     public void testCalculateTotalPriceWithDiscountAndTotalPrice() {
         ShoppingCart cart = createFilledCart();
+        double discount = 0.1;
 
         double totalPrice = cart.calculateTotalPrice();
-        double discount = 0.1;
-        double discountedPrice = totalPrice - (totalPrice * discount);
 
+        double discountedPrice = totalPrice - (totalPrice * discount);
         assertEquals(31.78, discountedPrice, 0.01);
         assertEquals(35.98, totalPrice, 0.01);
     }

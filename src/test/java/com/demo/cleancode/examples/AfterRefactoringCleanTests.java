@@ -3,6 +3,7 @@ package com.demo.cleancode.examples;
 import com.demo.cleancode.examples.util.model.Item;
 import com.demo.cleancode.examples.util.model.ShippingCalculator;
 import com.demo.cleancode.examples.util.model.ShoppingCart;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -12,10 +13,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class AfterRefactoringCleanTests {
 
+    @Test
     public void testCalculateShippingCost() {
         ShoppingCart cart = createFilledCart();
         double totalWeight = cart.getTotalWeight();
+
         double shippingCost = calculateShippingCost(totalWeight);
+
         assertShippingCost(5.0, shippingCost);
     }
 
