@@ -11,6 +11,7 @@ public class AfterRefactoringSingleConcept {
     @Test
     public void testCalculateTotalPrice_WithoutDiscount() {
         ShoppingCart cart = createFilledCart();
+
         double totalPrice = cart.calculateTotalPrice();
 
         assertEquals(35.98, totalPrice, 0.01);
@@ -19,6 +20,7 @@ public class AfterRefactoringSingleConcept {
     @Test
     public void testCalculateTotalPrice_WithDiscountApplied() {
         ShoppingCart cart = createFilledCart();
+
         double discountedPrice = cart.calculateTotalPriceWithDiscount(0.1);
 
         assertEquals(31.78, discountedPrice, 0.01);

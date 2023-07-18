@@ -9,5 +9,4 @@ class CleanCodeExamplesApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

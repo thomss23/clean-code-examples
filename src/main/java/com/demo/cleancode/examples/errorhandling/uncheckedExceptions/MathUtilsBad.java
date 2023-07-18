@@ -1,6 +1,7 @@
 package com.demo.cleancode.examples.errorhandling.uncheckedExceptions;
 
 class MathUtilsBad {
+
     public static double divide(double dividend, double divisor) throws Exception {
         if (divisor == 0) {
             throw new Exception("Divisor cannot be zero.");
