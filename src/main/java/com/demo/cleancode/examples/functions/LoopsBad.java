@@ -28,7 +28,6 @@ public class LoopsBad {
                 System.out.println("My custom logic in depth embedded that I need to add for a corner case bug fix unrelated with the other 1-5 conditions");
             }
 
-
             if (isCondition4Fulfilled(workItem)) {
                 System.out.println("Some logic4 that is related with logic 5");
             }

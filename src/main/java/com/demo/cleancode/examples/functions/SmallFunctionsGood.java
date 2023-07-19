@@ -60,7 +60,7 @@ public class SmallFunctionsGood {
 
     private double calculateSalary(int hoursWorked, double hourlyRate) {
         if (hasOvertime(hoursWorked)) {
-            return calculatSalaryWithOvertime(hoursWorked, hourlyRate);
+            return calculateSalaryWithOvertime(hoursWorked, hourlyRate);
         }
         return calculateRegularSalary(hoursWorked, hourlyRate);
     }
@@ -69,7 +69,7 @@ public class SmallFunctionsGood {
         return hoursWorked > TOTAL_MONTH_HOURS;
     }
 
-    private double calculatSalaryWithOvertime(int hoursWorked, double hourlyRate) {
+    private double calculateSalaryWithOvertime(int hoursWorked, double hourlyRate) {
         int overtimeHours = hoursWorked - TOTAL_MONTH_HOURS;
         double overtimeRate = hourlyRate * OVERTIME_INCREASE_RATE;
         return (TOTAL_MONTH_HOURS * hourlyRate) + (overtimeHours * overtimeRate);

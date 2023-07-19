@@ -34,7 +34,6 @@ public class SwitchStatementBad {
         if (isEndOfMonthDate(date)) {
             switch (employee.getType()) {
                 case COMMISSIONED:
-                    return false;
                 case HOURLY:
                     return false;
                 case SALARIED:
@@ -48,7 +47,6 @@ public class SwitchStatementBad {
                 case COMMISSIONED:
                     return true;
                 case HOURLY:
-                    return false;
                 case SALARIED:
                     return false;
                 default:

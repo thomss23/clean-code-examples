@@ -98,7 +98,6 @@ public class OtherUsefulFunctionPrinciples {
         methodWithNonNullableArguments("Mary", "Manager", 25, "Red");
         methodWithNonNullableArguments("John", "Hr", 27, "Yellow");
         methodWithNonNullableArguments("Tom", "Manager", 29, "Green");
-
     }
 
     private void methodWithNonNullableArguments(String name, String type, int age, String color) {
