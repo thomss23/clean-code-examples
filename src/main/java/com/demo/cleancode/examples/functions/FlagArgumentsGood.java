@@ -39,11 +39,13 @@ public class FlagArgumentsGood {
     }
 
     //another example
-    public Booking createRegularBooking(Employee aEmployee, boolean isPremium) {
+    public Booking createRegularBooking(Employee aEmployee) {
+        //logic for regular booking
         return new Booking("randomId", "regular");
     }
 
-    public Booking createPremiumBooking(Employee aEmployee, boolean isPremium) {
+    public Booking createPremiumBooking(Employee aEmployee) {
+        //logic for premium booking
         return new Booking("randomId", "premium");
     }
 }
