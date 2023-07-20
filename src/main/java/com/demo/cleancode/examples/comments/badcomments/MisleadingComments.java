@@ -11,18 +11,14 @@ At first glance, the comment for the calculateArea() method seems accurate and h
  **/
 public class MisleadingComments {
 
-    //This method calculates the area of a circle.
+    //This method calculates the area of a rectangle.
     public double calculateArea(double radius) {
-        double area = Math.PI * radius * radius;
-        return area;
-    }
-
-    public double calculateAreaFixed(double radius) {
         if (radius < 0) {
             return Double.NaN;
         }
         double area = Math.PI * radius * radius;
         return area;
     }
+
 }
 
